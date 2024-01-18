@@ -4,6 +4,7 @@ import gradio as gr
 import os
 from LLM import InternLM_LLM
 from langchain.prompts import PromptTemplate
+from openxlab.model import download
 
 
 def load_chain():
@@ -19,8 +20,9 @@ def load_chain():
     #     persist_directory=persist_directory,  # 允许我们将persist_directory目录保存到磁盘上
     #     embedding_function=embeddings
     # )
-
-    llm = InternLM_LLM(model_path = "internlm/internlm2-chat-7b")
+    download(model_repo='OpenLMLab/internlm2-chat-7b',output='/home/xlab-app-center')
+    llm = InternLM_LLM(model_path = "/home/xlab-app-center")
+    # llm = InternLM_LLM(model_path = "internlm/internlm2-chat-7b")
 
     template = """使用以下上下文来回答最后的问题。如果你不知道答案，就说你不知道，不要试图编造答
     案。尽量使答案简明扼要。总是在回答的最后说“谢谢你的提问！”。
