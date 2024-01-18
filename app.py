@@ -20,7 +20,7 @@ def load_chain():
     #     persist_directory=persist_directory,  # 允许我们将persist_directory目录保存到磁盘上
     #     embedding_function=embeddings
     # )
-    download(model_repo='OpenLMLab/internlm2-chat-7b',output='/home/xlab-app-center')
+    download(model_repo='OpenLMLab/InternLM-7b',output='/home/xlab-app-center')
     llm = InternLM_LLM(model_path = "/home/xlab-app-center")
     # llm = InternLM_LLM(model_path = "internlm/internlm2-chat-7b")
 
